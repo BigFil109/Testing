@@ -1,4 +1,4 @@
-package net.mcilvenna.wandisco.thread;
+package net.mcilvenna.wd.thread;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.ReentrantLock;

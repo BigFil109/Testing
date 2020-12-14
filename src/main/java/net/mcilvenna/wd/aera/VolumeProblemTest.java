@@ -1,4 +1,4 @@
-package net.mcilvenna.wandisco.aera;
+package net.mcilvenna.wd.aera;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
