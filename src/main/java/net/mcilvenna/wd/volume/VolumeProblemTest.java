@@ -1,16 +1,14 @@
-package net.mcilvenna.wd.aera;
+package net.mcilvenna.wd.volume;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
 import org.junit.jupiter.api.Test;
+
 
 class VolumeProblemTest {
 	
 	@Test
-	void testCubeZero() {
+	public void testCubeZero() {
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 			VolumeProblem.cubeVolume(0d);
 		});
@@ -21,7 +19,7 @@ class VolumeProblemTest {
 	}
 	
 	@Test
-	void testCubeLtZero() {
+	public void testCubeLtZero() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 			VolumeProblem.cubeVolume(-1d);
@@ -35,7 +33,7 @@ class VolumeProblemTest {
 
 
 	@Test
-	void testCubeMaxFail() {
+	public void testCubeMaxFail() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 
@@ -49,14 +47,14 @@ class VolumeProblemTest {
 	}
 
 	@Test
-	void testCubeOne() {
+	public void testCubeOne() {
 		double expected = 1;
 		double actual = VolumeProblem.cubeVolume(1d);
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	void testCubeOneHundredTwentyFive() {
+	public void testCubeOneHundredTwentyFive() {
 		double expected = 125;
 		double actual = VolumeProblem.cubeVolume(5d);
 		assertEquals(expected, actual);
@@ -64,7 +62,7 @@ class VolumeProblemTest {
 
 
 	@Test
-	void testSphereZero() {
+	public void testSphereZero() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 			VolumeProblem.sphereVolume(0);
@@ -78,7 +76,7 @@ class VolumeProblemTest {
 	
 	
 	@Test
-	void testSphereLtZero() {
+	public void testSphereLtZero() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 			VolumeProblem.sphereVolume(-1d);
@@ -92,7 +90,7 @@ class VolumeProblemTest {
 
 
 	@Test
-	void testSphereMaxFail() {
+	public void testSphereMaxFail() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 
@@ -106,14 +104,14 @@ class VolumeProblemTest {
 	}
 
 	@Test
-	void testSphereOne() {
+	public void testSphereOne() {
 		double expected = 4.19;
 		double actual = VolumeProblem.sphereVolume(1);
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	void testSphereFive() {
+	public void testSphereFive() {
 		double expected = 523.6;
 		double actual = VolumeProblem.sphereVolume(5);
 		assertEquals(expected, actual);
@@ -121,7 +119,7 @@ class VolumeProblemTest {
 
 	
 	@Test
-	void testTetrahedronZero() {
+	public void testTetrahedronZero() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 			VolumeProblem.tetrahedronVolume(0);
@@ -134,7 +132,7 @@ class VolumeProblemTest {
 	}
 
 	@Test
-	void testTetrahedronNeg() {
+	public void testTetrahedronNeg() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 			VolumeProblem.tetrahedronVolume(-1);
@@ -149,7 +147,7 @@ class VolumeProblemTest {
 	
 
 	@Test
-	void testTetrahedroMaxFail() {
+	public void testTetrahedroMaxFail() {
 
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 
@@ -163,14 +161,14 @@ class VolumeProblemTest {
 	}
 
 	@Test
-	void testTetrahedronOne() {
+	public void testTetrahedronOne() {
 		double expected = 0.12;
 		double actual = VolumeProblem.tetrahedronVolume(1);
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	void testTetrahedronFive() {
+	public void testTetrahedronFive() {
 		double expected = 14.73;
 		double actual = VolumeProblem.tetrahedronVolume(5);
 		assertEquals(expected, actual);

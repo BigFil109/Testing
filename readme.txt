@@ -1,6 +1,7 @@
 Area problem see 
-	net.mcilvenna.wandisco.thread.AreaProblem
+	net.mcilvenna.wd.volume.VolumeProblem
+	net.mcilvenna.wd.volume.VolumeProblemTest
 
 
 Thread problem see 
-	net.mcilvenna.wandisco.thread.MultithreadingChallenge
+	net.mcilvenna.wd.thread.MultithreadingChallenge

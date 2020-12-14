@@ -1,4 +1,4 @@
-package net.mcilvenna.wd.aera;
+package net.mcilvenna.wd.volume;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
