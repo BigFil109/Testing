@@ -1,6 +1,5 @@
 package net.mcilvenna.wd.volume;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
@@ -12,21 +11,22 @@ class TetrahedronTest {
 	
 	
 	@AfterEach
-	public void eardown() {
+	public void teardown() {
 		tetrahedron = null;
 	}
 	
-
 	
 	@Test
+	//test pass zero
 	public void testTetrahedronZero() {
 		tetrahedron = new Tetrahedron(0d);
 		double actual = tetrahedron.getVolume();
 		double expected = 0.0;
-		assertTrue("Value was "+ expected + " expected "+expected,expected ==actual);
+		assertTrue(expected ==actual,"Value was "+ expected + " expected "+expected);
 	}
 
 	@Test
+	//test neg value throws expected exception
 	public void testTetrahedronNeg() {
 		tetrahedron = new Tetrahedron(-1d);
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -36,12 +36,13 @@ class TetrahedronTest {
 		String expectedMessage = "Input must be a postive number : -1";
 		String actualMessage = exception.getMessage();
 
-		assertTrue(actualMessage.contains(expectedMessage));
+		assertTrue(actualMessage.contains(expectedMessage),"Message was "+ actualMessage + " expected "+expectedMessage);
 	}
 	
 	
 
 	@Test
+	//test exceeding max double in the results throws expected exception
 	public void testTetrahedroMaxFail() {
 		tetrahedron = new Tetrahedron(Double.MAX_VALUE);
 		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -52,10 +53,11 @@ class TetrahedronTest {
 		String expectedMessage = "Result exceeds max double";
 		String actualMessage = exception.getMessage();
 		
-		assertTrue("Message was "+ actualMessage + " expected "+expectedMessage,actualMessage.contains(expectedMessage));
+		assertTrue(actualMessage.contains(expectedMessage),"Message was "+ actualMessage + " expected "+expectedMessage);
 	}
 
 	@Test
+	//test happy path
 	public void testTetrahedronOne() {
 		tetrahedron = new Tetrahedron(1d);
 		double expected = 0.12;
@@ -64,6 +66,7 @@ class TetrahedronTest {
 	}
 
 	@Test
+	//test happy path
 	public void testTetrahedronFive() {
 		tetrahedron = new Tetrahedron(5d);
 		double expected = 14.73;

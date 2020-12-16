@@ -1,11 +1,8 @@
 package net.mcilvenna.wd.volume;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
@@ -25,7 +22,7 @@ class CubeTest {
 		cube = new Cube(0d);
 		double actual = cube.getVolume();
 		double expected = 0.0;
-		assertTrue("Value was "+ expected + " expected "+expected,expected ==actual);
+		assertTrue(expected ==actual,"Value was "+ expected + " expected "+expected);
 	}
 	
 	@Test
@@ -38,7 +35,7 @@ class CubeTest {
 		String expectedMessage = "Input must be a postive number : -1.0";
 		String actualMessage = exception.getMessage();
 
-		assertTrue("Message was "+ actualMessage + " expected "+expectedMessage,actualMessage.contains(expectedMessage));
+		assertTrue(actualMessage.contains(expectedMessage),"Message was "+ actualMessage + " expected "+expectedMessage);
 	}
 
 
@@ -52,7 +49,7 @@ class CubeTest {
 		String expectedMessage = "Result exceeds max double";
 		String actualMessage = exception.getMessage();
 		
-		assertTrue("Message was "+ actualMessage + " expected "+expectedMessage,actualMessage.contains(expectedMessage));
+		assertTrue(actualMessage.contains(expectedMessage),"Message was "+ actualMessage + " expected "+expectedMessage);
 	}
 
 	@Test
