@@ -6,20 +6,21 @@ import java.util.concurrent.locks.ReentrantLock;
 class MultithreadingChallenge {
 	static final class SharedInteger {
 		private int i;
-		private final Object lock = new Object();
 
 		SharedInteger() {
 			i = 0;
 		}
 
 		void increment() {
-			synchronized (lock) {
+			synchronized (this) {
 				i++;
 			}
 		}
 
 		int get() {
-			return i;
+			synchronized (this) {
+				return i;
+			}
 		}
 	}
 
@@ -39,7 +40,7 @@ class MultithreadingChallenge {
 			while (!done) {
 				if (c.tryLock()) {
 					try {
-						a.tryLock();
+						a.lock();
 						Thread.sleep(5_000);
 						b.lock();
 						assert a.isHeldByCurrentThread() && b.isHeldByCurrentThread();
@@ -58,7 +59,7 @@ class MultithreadingChallenge {
 			while (!done) {
 				if (c.tryLock()) {
 					try {
-						b.tryLock();
+						b.lock();
 						Thread.sleep(5_000);
 						a.lock();
 						assert a.isHeldByCurrentThread() && b.isHeldByCurrentThread();
